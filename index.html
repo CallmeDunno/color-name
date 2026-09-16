@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Color Name Finder – Tra tên màu từ mã HEX</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Color Name Finder</h1>
+      <p class="subtitle">Nhập mã HEX để nhận tên màu và tên dạng <code>snake_case</code>.</p>
+    </header>
+
+    <form id="lookup-form" class="search" autocomplete="off">
+      <input type="color" id="picker" value="#ffa500" aria-label="Chọn màu" />
+      <div class="hex-field">
+        <span class="hash">#</span>
+        <input type="text" id="hex-input" placeholder="ffa500" spellcheck="false" aria-label="Mã HEX" />
+      </div>
+      <button type="submit" id="submit-btn" disabled>Tra cứu</button>
+    </form>
+    <p id="error" class="error" role="alert" hidden></p>
+    <p id="status" class="status">Đang tải dữ liệu màu…</p>
+
+    <section id="result" class="result" hidden aria-live="polite">
+      <div class="swatches">
+        <figure>
+          <div id="swatch-input" class="swatch"></div>
+          <figcaption>Màu nhập <span id="input-hex"></span></figcaption>
+        </figure>
+        <figure>
+          <div id="swatch-match" class="swatch"></div>
+          <figcaption>Màu khớp <span id="match-hex"></span></figcaption>
+        </figure>
+      </div>
+
+      <span id="match-badge" class="badge"></span>
+
+      <div class="row">
+        <div>
+          <div class="label">Tên màu</div>
+          <div id="color-name" class="value"></div>
+        </div>
+        <button type="button" class="copy" data-target="color-name">Copy</button>
+      </div>
+      <div class="row">
+        <div>
+          <div class="label">snake_case</div>
+          <div id="snake-name" class="value mono"></div>
+        </div>
+        <button type="button" class="copy" data-target="snake-name">Copy</button>
+      </div>
+      <div class="row">
+        <div>
+          <div class="label">XML</div>
+          <div id="xml-snippet" class="value mono xml"></div>
+        </div>
+        <button type="button" class="copy" data-target="xml-snippet">Copy</button>
+      </div>
+    </section>
+
+    <footer>
+      Dữ liệu tên màu: <a href="https://github.com/meodai/color-name-list" target="_blank" rel="noopener">color-name-list</a> (MIT).
+    </footer>
+  </main>
+
+  <script src="js/color-utils.js"></script>
+  <script src="js/snake-case.js"></script>
+  <script src="js/name-lookup.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
