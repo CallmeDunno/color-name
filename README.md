@@ -1,13 +1,19 @@
 # Color Name Finder
 
-Nhập mã HEX → nhận tên màu, tên dạng `snake_case` và đoạn XML `<color name="...">#hex</color>`.
+Enter a HEX color code and get:
 
-Demo: https://callmedunno.github.io/color-name/
+- the color name (exact match, or the nearest named color by CIEDE2000 distance)
+- the name in `snake_case`
+- a ready-to-copy XML snippet: `<color name="color_name">#hex</color>`
 
-## Chạy local
-```bash
-node serve.js   # http://localhost:5173
-node tests/run-tests.js
-```
+Live demo: https://callmedunno.github.io/color-name/
 
-Dữ liệu tên màu: [color-name-list](https://github.com/meodai/color-name-list) (MIT).
+You can also link to a color directly: `https://callmedunno.github.io/color-name/?hex=ffa500`
+
+## Third-party data & license
+
+The color name data (`data/colornames.min.json`) comes from
+[meodai/color-names](https://github.com/meodai/color-names) (npm package `color-name-list` v14.50.0),
+Copyright (c) 2017 David Aerne, released under the **MIT License**.
+
+A copy of the original license is included at [`data/LICENSE.txt`](data/LICENSE.txt), as required by the MIT License.
