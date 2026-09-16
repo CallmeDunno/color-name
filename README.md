@@ -6,10 +6,6 @@ Enter a HEX color code and get:
 - the name in `snake_case`
 - a ready-to-copy XML snippet: `<color name="color_name">#hex</color>`
 
-Live demo: https://callmedunno.github.io/color-name/
-
-You can also link to a color directly: `https://callmedunno.github.io/color-name/?hex=ffa500`
-
 ## Third-party data & license
 
 The color name data (`data/colornames.min.json`) comes from
